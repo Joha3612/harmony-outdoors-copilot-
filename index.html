@@ -12,15 +12,15 @@
             box-sizing: border-box;
         }
 
-        /* Body background */
+        /* Body background gradient */
         body {
-            background: linear-gradient(to bottom, #aad4e5, #6b8e23);
+            background: linear-gradient(to bottom, #b3e0ff, #66ccff);
             font-family: Arial, sans-serif;
         }
 
         /* Header styles */
         header {
-            background-color: #fff;
+            background-color: #ffffff;
             padding: 20px;
             text-align: center;
         }
@@ -35,12 +35,13 @@
             color: #333;
         }
 
-        /* Main content styles */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        /* Product section styles */
+        .product {
+            display: flex;
+            justify-content: space-between;
             padding: 20px;
-            color: #fff;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #ddd;
         }
 
         /* Footer styles */
@@ -53,12 +54,11 @@
 
         /* Contact form styles */
         form {
-            margin-top: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
         }
 
         input[type="text"],
@@ -66,13 +66,13 @@
         textarea {
             width: 100%;
             padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
             border-radius: 5px;
         }
 
-        button {
-            background-color: #6b8e23;
+        input[type="submit"] {
+            background-color: #333;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -90,45 +90,35 @@
         </nav>
     </header>
 
-    <div class="container">
-        <!-- Product descriptions and images go here -->
-        <!-- Example: -->
-        <h2>Product 1</h2>
-        <p>High-quality camping gear for outdoor enthusiasts.</p>
-        <ul>
-            <li>Weight: 2.5 lbs</li>
-            <li>Capacity: 2-person</li>
-            <li>Material: Ripstop nylon</li>
-        </ul>
-    </div>
+    <section class="product">
+        <div>
+            <h2>Product 1</h2>
+            <p>Weight: 2 lbs</p>
+            <p>Capacity: 30L</p>
+            <p>Material: Nylon</p>
+        </div>
+        <img src="product1.jpg" alt="Product 1 Image">
+    </section>
+
+    <!-- Repeat similar product sections for other products -->
 
     <footer>
         © 2024 Harmony Outdoors. All rights reserved.
-        <br>
-        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-        <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+        <div>
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <!-- Add more social media icons here -->
+        </div>
     </footer>
 
-    <div id="about">
+    <section id="about">
         <h2>About Us</h2>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <button type="submit">Submit</button>
+        <form action="submit.php" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <input type="submit" value="Submit">
         </form>
-        <p id="thank-you-message"></p>
-    </div>
-
-    <script>
-        const contactForm = document.getElementById('contact-form');
-        const thankYouMessage = document.getElementById('thank-you-message');
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Handle form submission (you can use AJAX or any backend solution)
-            // Display thank
+    </section>
+</body>
+</html>
